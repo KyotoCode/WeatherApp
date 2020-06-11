@@ -1,4 +1,5 @@
 const weather = new Weather;
+const ui = new UI;
 const btnCity = document.getElementById('btnIn');
 
 btnCity.addEventListener('click', (e) =>{
@@ -7,18 +8,16 @@ btnCity.addEventListener('click', (e) =>{
 
     if(searchCity !== ''){
     weather.getWeather(searchCity)
-    .then(data => console.log(data))
+    .then(data => {
+      if(data.message === 'city not found'){
+        ui.getError();
+      }else{
+      console.log(data)
+      ui.getText(data)
+      }
+    })
+  }else{
+    alert('Please enter valid input');
   }
-
   e.preventDefault
-//   console.log(searchText);
 })
-// searchCity.addEventListener('keyup', (e) => {
-//   let searchText= e.target.value;
-//   console.log(searchText);
-
-//   if(searchText !== ''){
-//     weather.getWeather(searchText)
-//     .then(data => console.log(data))
-//   }
-// })

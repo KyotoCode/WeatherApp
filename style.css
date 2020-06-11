@@ -4,3 +4,15 @@
 #btnIn{
   margin-left: 5px;
 }
+#name{
+  margin-right: 10px;
+  text-align: center;
+}
+h4{
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+#city{
+  text-align: center;
+}
